@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".DonutFragment">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.week5roomsasn.DonutsViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <!-- TODO: Update blank fragment layout -->
+        <EditText
+            android:id="@+id/donut_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:hint="Enter an amount of donuts ate yesteday."
+            android:text="@={viewModel.donutAmount}"
+            />
+
+
+        <Button
+            android:id="@+id/save_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="147dp"
+            android:color="@color/pink"
+            android:gravity="center"
+            android:onClick="@{()->viewModel.addDonuts()}"
+            android:outlineSpotShadowColor="#DA1F1F"
+            android:text="Enter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/donut_name"
+            app:strokeColor="#B82525" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="78dp"
+            android:layout_height="78dp"
+            android:layout_marginStart="95dp"
+            android:layout_marginEnd="123dp"
+            app:layout_constraintEnd_toEndOf="@+id/tasks"
+            app:layout_constraintStart_toStartOf="@+id/save_button"
+            app:srcCompat="@drawable/donuttransparent"
+            tools:layout_editor_absoluteY="175dp"
+            tools:srcCompat="@drawable/donuttransparent" />
+
+        <TextView
+            android:id="@+id/tasks"
+            android:layout_width="542dp"
+            android:layout_height="540dp"
+            android:layout_marginTop="88dp"
+            android:gravity="center"
+            android:text="@{viewModel.donutsString}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.419"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
